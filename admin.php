@@ -37,7 +37,7 @@
       $adminpassword = htmlspecialchars($adminpassword);
 
 
-      $result=all($tablename,'admin_id',$conn,$adminid);
+      $result=get($tablename,$conn);
       $row=extract(array(
             'results'=>$result
 
@@ -45,13 +45,13 @@
 
        foreach($results as $resit){
 
-        if($adminid==$resit['admin_id'] && $adminpassword==$resit['admin_password']){
+        if($adminid==$resit['admin'] && $adminpassword==$resit['admin_password']){
                        $_SESSION['admin'] = $resit['admin_firstname'];
                        $_SESSION['adminsurname'] = $resit['admin_surname'];
                        $_SESSION['adminothername'] = $resit['admin_othername'];
                        $_SESSION['adminemail'] = $resit['admin_email'];
                        $_SESSION['adminpassword'] = $resit['admin_password'];
-                       $_SESSION['adminid'] = $resit['admin_id']; 
+                       $_SESSION['adminid'] = $resit['admin']; 
 
           header('location:adminprofile.php');
           //real codes follow later
@@ -62,6 +62,7 @@
 
           //print_r($password);
           echo "i am with u nigga";
+          echo var_dump($adminid);
         }
 
 
@@ -76,8 +77,13 @@
 
 
    else{
+     
+
       echo "failed";
     }
+
+     
+      
     
 
 ?>

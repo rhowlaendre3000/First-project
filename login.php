@@ -33,7 +33,7 @@
 
     
 
-      $result=all($tablename,'studentid',$conn,$studentid);
+      $result=get($tablename,$conn);
       
       $row=extract(array(
             'results'=>$result
