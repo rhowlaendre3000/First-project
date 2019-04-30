@@ -113,7 +113,8 @@ if(isset($_POST['upload'])){
         <h4>PRODUCTS VIEW</h4>
         <div class="table-responsive">
 
-                
+                  
+
               <table id="mytable" class="table table-bordred table-striped">
                    
                    <thead>
@@ -158,10 +159,9 @@ if(isset($_POST['upload'])){
 
 ?>
     <tbody>
-    
-    <tr>
+      <tr>
     <td><input type="checkbox" class="checkthis" /></td>
-    <td><?php echo $resit['prod_id']; ?></td>
+    <td><?php echo $resit['prod_id'];  ?></td>
     <td><?php echo $resit['prod_name']; ?></td>
     <td><?php echo $resit['prod_desc']; ?></td>
     <td><img src="productpics/<?php echo $resit['prod_pic']?>"> </td>
@@ -181,7 +181,7 @@ if(isset($_POST['upload'])){
     </tbody>
         
 </table>
-
+<?php echo var_dump($results);  ?>
 <div class="clearfix"></div>
 <ul class="pagination pull-right">
   <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>

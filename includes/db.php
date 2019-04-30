@@ -68,7 +68,7 @@ function get($tablename,$conn){
 
 	function all($tablename,$columname,$conn,$studentid){
 		try{
-		$results=$conn->query("SELECT * FROM $tablename WHERE $tablename.$columname=$studentid");
+		$results=$conn->query("SELECT * FROM `$tablename` WHERE $columname='$studentid'");
 
 		return ($results->rowCount()>0)
 		? $results
